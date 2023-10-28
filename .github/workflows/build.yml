@@ -19,10 +19,8 @@ jobs:
         with:
           node-version: "18.16"
       - name: Setup
-        working-directory: ./frontend
         run: |
           npm ci
       - name: Lint and Docs Styling
-        working-directory: ./frontend
         run: |
           npm run build
