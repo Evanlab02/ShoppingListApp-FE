@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - trunk
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: Release Please
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          release-type: node
+          package-name: ShoppingListApp-Frontend
+          token: ${{ secrets.GITHUB_TOKEN }}
+          default-branch: trunk
+      - uses: actions/checkout@v3
+        if: ${{ steps.release.outputs.releases_created }}
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.16"
+      - name: Setup
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          npm ci
+      - name: Build the app
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          npm run build
+      - name: Zip the build
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          zip -r shoppingapp-fe.zip dist
+      - name: Upload the build
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          gh release upload ${{ steps.release.outputs.tag_name }} shoppingapp-fe.zip
+        env:
+          GITHUB_TOKEN: ${{ github.TOKEN }}
