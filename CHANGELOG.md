@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.8.0 (2023-10-28)
+
+
+### Features
+
+* **Project:** Migrated to single repo ([73360ea](https://github.com/Evanlab02/ShoppingListApp-FE/commit/73360ea36325631b65c51affbb3b17d7d57a15f3))
+
+
+### Bug Fixes
+
+* **Lint:** Add eslint config file ([3598432](https://github.com/Evanlab02/ShoppingListApp-FE/commit/3598432297418cd46b92a94c892c6ca327032c31))
+
+
+### Miscellaneous Chores
+
+* release 0.8.0 ([e84edd5](https://github.com/Evanlab02/ShoppingListApp-FE/commit/e84edd5baeb0a7b5ee90f0af60b39fc070751688))
+
 ## [0.7.1](https://github.com/Evanlab02/ShoppingListApp/compare/shopping-app-frontend-v0.7.0...shopping-app-frontend-v0.7.1) (2023-10-26)
 
 
