@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/Evanlab02/ShoppingListApp-FE/compare/v0.8.0...v0.8.1) (2023-11-04)
+
+
+### Bug Fixes
+
+* **Docker:** Implemented missing docker functionality ([c05636c](https://github.com/Evanlab02/ShoppingListApp-FE/commit/c05636c36939aa2853b0740d5a035cc466d1b336))
+
 ## 0.8.0 (2023-10-28)
 
 
